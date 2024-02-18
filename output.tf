@@ -22,3 +22,7 @@ output "ostype" {
   value       = proxmox_lxc.lxc-test.ostype
   description = "OS type of lxc container"
 }
+
+output "all-project-secrets" {
+  value = data.infisical_secrets.backend-secrets
+}

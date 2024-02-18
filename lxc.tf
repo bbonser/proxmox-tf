@@ -1,3 +1,9 @@
+# Get secrets from infisical
+data "infisical_secrets" "backend-secrets" {
+  env_slug    = "prod"
+  folder_path = "/"
+}
+
 # LXC configuration
 resource "proxmox_lxc" "lxc-test" {
   target_node  = var.target_node

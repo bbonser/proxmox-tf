@@ -34,3 +34,10 @@ resource "infisical_secret" "host" {
   folder_path = "/"
 }
 
+resource "infisical_secret" "pm_api_url" {
+  name        = "PM_API_URL"
+  value       = var.pm_api_url
+  env_slug    = "prod"
+  folder_path = "/"
+}
+
