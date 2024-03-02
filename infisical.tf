@@ -1,4 +1,4 @@
-# Manage Secrets
+// Manage Secrets
 resource "infisical_secret" "pm_api_token" {
   name        = "PM_API_TOKEN"
   value       = var.pm_api_token_secret

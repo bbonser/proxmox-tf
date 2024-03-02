@@ -1,10 +1,10 @@
-# Get secrets from infisical
+// Get secrets from infisical
 data "infisical_secrets" "backend-secrets" {
   env_slug    = "prod"
   folder_path = "/"
 }
 
-# LXC configuration
+// LXC configuration
 resource "proxmox_lxc" "lxc-test" {
   target_node  = var.target_node
   hostname     = var.hostname
@@ -23,8 +23,8 @@ resource "proxmox_lxc" "lxc-test" {
     size    = "8G"
   }
 
-  nameserver   = var.nameserver
-  searchdomain = var.searchdomain
+  nameserver   = var.nameserver // DNS Settings
+  searchdomain = var.searchdomain // DNS Settings
 
   network {
     name     = "eth0"

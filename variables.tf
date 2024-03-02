@@ -72,17 +72,17 @@ variable "pve_id_tag" {
 variable "gateway" {
   description = "Gateway address"
   type        = string
-  default     = "192.168.1.1"
+  default     = "192.168.1.1" // modify to your router address
 }
 
 variable "nameserver" {
   description = "DNS Server"
   type        = string
-  default     = "192.168.1.13"
+  default     = "192.168.1.13" // modify to your DNS server address
 }
 
 variable "searchdomain" {
   description = "DNS Search Domain"
   type        = string
-  default     = "192.168.1.13"
+  default     = "192.168.1.13" // modify to your DNS server address
 }
