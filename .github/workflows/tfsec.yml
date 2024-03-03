@@ -19,7 +19,11 @@ jobs:
           persist-credentials: false
 
       - name: tfsec
+<<<<<<< HEAD
         uses: aquasecurity/tfsec-sarif-action@v1
+=======
+        uses: aquasecurity/tfsec-sarif-action@v0.1.4
+>>>>>>> 74352d115323cd14b10a1aaef651ca12c8ee5eae
         with:
           sarif_file: tfsec.sarif          
 
