@@ -23,7 +23,7 @@ resource "proxmox_lxc" "lxc-test" {
     size    = "8G"
   }
 
-  nameserver   = var.nameserver // DNS Settings
+  nameserver   = var.nameserver   // DNS Settings
   searchdomain = var.searchdomain // DNS Settings
 
   network {
