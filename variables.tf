@@ -1,4 +1,6 @@
 // Variables set for provider access
+
+// Proxmox Variables
 variable "pm_api_url" {
   type      = string
   sensitive = true
@@ -14,6 +16,7 @@ variable "pm_api_token_id" {
   sensitive = true
 }
 
+// Infisical Variables
 variable "infisical_host" {
   type      = string
   sensitive = true
@@ -28,7 +31,6 @@ variable "service_token" {
 variable "target_node" {
   description = "node in proxmox"
   type        = string
-  default     = "pve"
 }
 
 variable "ostemplate" {
@@ -43,8 +45,7 @@ variable "ostype" {
 }
 
 variable "hostname" {
-  type    = string
-  default = "lxc-test"
+  type = string
 }
 
 variable "password" {
@@ -55,12 +56,11 @@ variable "password" {
 variable "vmid" {
   description = "VM ID in Proxmox"
   type        = number
-  default     = 108
 }
 
 variable "ip" {
-  type    = string
-  default = "192.168.1.18/24"
+  type = string
+  // default = "192.168.1.18/24"
 }
 
 variable "pve_id_tag" {
@@ -72,22 +72,38 @@ variable "pve_id_tag" {
 variable "gateway" {
   description = "Gateway address"
   type        = string
-  default     = "192.168.1.1" // modify to your router address
 }
 
 variable "nameserver" {
   description = "DNS Server"
   type        = string
-  default     = "192.168.1.13" // modify to your DNS server address
 }
 
 variable "searchdomain" {
   description = "DNS Search Domain"
   type        = string
-  default     = "192.168.1.13" // modify to your DNS server address
 }
 
 variable "sshkey" {
-  type = string
+  type      = string
   sensitive = true
+}
+
+// Cloud-Init Variables
+variable "target_node_pve" {
+  type        = string
+  description = "node name in the Proxmox cluster"
+}
+
+variable "clone" {
+  type        = string
+  description = "template name to clone vm from"
+}
+
+variable "cloudinit_cdrom_storage" {
+  type = string
+}
+
+variable "storage" {
+  type = string
 }

@@ -41,3 +41,9 @@ resource "infisical_secret" "pm_api_url" {
   folder_path = "/"
 }
 
+resource "infisical_secret" "sshkey" {
+  name        = "SSHKEY"
+  value       = var.sshkey
+  env_slug    = "prod"
+  folder_path = "/"
+}
