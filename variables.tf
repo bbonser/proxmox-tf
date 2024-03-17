@@ -86,3 +86,8 @@ variable "searchdomain" {
   type        = string
   default     = "192.168.1.13" // modify to your DNS server address
 }
+
+variable "sshkey" {
+  type = string
+  sensitive = true
+}
