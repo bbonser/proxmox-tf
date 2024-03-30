@@ -38,9 +38,9 @@ resource "proxmox_vm_qemu" "cloudinit-k3s-master" {
 
   # Setup the ip address using cloud-init.
   # Keep in mind to use the CIDR notation for the ip.
-  ipconfig0  = "ip=192.168.3.10${count.index + 1}/24,gw=192.168.3.1"
+  ipconfig0  = "ip=192.168.1.4${count.index + 1}/24,gw=192.168.1.1"
   ciuser     = "ubuntu"
-  nameserver = "192.168.200.11"
+  nameserver = "192.168.1.13"
   sshkeys    = var.sshkey
 }
 
@@ -84,7 +84,7 @@ resource "proxmox_vm_qemu" "cloudinit-k3s-worker" {
 
   # Setup the ip address using cloud-init.
   # Keep in mind to use the CIDR notation for the ip.
-  ipconfig0 = "ip=192.168.3.11${count.index + 1}/24,gw=192.168.3.1"
+  ipconfig0 = "ip=192.168.1.5${count.index + 1}/24,gw=192.168.1.1"
   ciuser    = "ubuntu"
   sshkeys   = var.sshkey
 }
