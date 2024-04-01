@@ -9,18 +9,18 @@ resource "proxmox_lxc" "lxc-test" {
   target_node  = var.target_node
   hostname     = var.hostname
   ostemplate   = var.ostemplate
-  unprivileged = false
+  unprivileged = true
   password     = var.password
   ostype       = var.ostype
   cores        = 2
-  memory       = 2012
+  memory       = 8012
   swap         = 512
   vmid         = var.vmid
 
   // Terraform will crash without rootfs defined
   rootfs {
     storage = "local-lvm"
-    size    = "8G"
+    size    = "30G"
   }
 
   nameserver   = var.nameserver   // DNS Settings
